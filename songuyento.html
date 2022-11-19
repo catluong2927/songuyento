@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SỐ NGUYÊN TỐ</title>
+</head>
+<body>
+<p>nhập số:</p>
+<input type="text" name="number" value="" id="number"><button onclick="clickcal()">calculator</button>
+<div id="result"></div>
+
+
+<script>
+    let prime;
+    let count=0;
+
+    function check(n) {
+        if (n <2) return false;
+        for (let j=2;j<= Math.sqrt(n);j++) {
+            if (n % j == 0) return false;
+        }
+        return true;
+     }
+
+    function clickcal() {
+        let num= parseInt(document.getElementById("number").value);
+        let result='';
+        for (let i=2;count<num;i++) {
+            if (check(i)) {
+                result += i+"<br>";
+                count++;
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>
